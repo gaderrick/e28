@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>High/Low Guessing Game</title>
+</head>
+
+<body>
+    <p>Welcome to the high/low guessing game. Guess a number between 1 and 100 to find the mystery number.
+        Pick too high
+        or low, and I'll give you a hint to refine your guess. Pick the number in less than <span
+            id="spanMaxGuesses"></span> guesses and you win!</p>
+    <p></p>
+    Pick a number:<br>
+    <form id="formGuesses">
+        <input type="text" id="txtUserGuess">
+        <input type="button" value="Guess" onclick="gamePlay()">
+    </form>
+    <p></p>
+    <p>
+        You have <span id="spanRemainingGuesses"></span> remaining guesses.
+    </p>
+    <p></p>
+    <p>
+        Your previous guesses:<br>
+        <span id="spanPreviousGuesses"></span>
+    </p>
+
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
