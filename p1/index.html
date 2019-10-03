@@ -19,9 +19,44 @@
 
 <body>
     <h1>Project 1 - Gerald Derrick</h1>
-
+    <h2>High/Low Guessing Game</h2>
     <div id='app' v-cloak>
-        {{ isAdmin }}
+        <div>
+            The rules of the game are simple:<br>
+            1) Your goal is to select a randomly selected number between 1 and {{ maxRandomNumber }}.<br>
+            2) You guess first, the computer will guess second.<br>
+            3) The game ends when either the number is guessed, or each player makes {{ maxAllowedGuesses}} incorrect
+            guesses.<br>
+            4) Click the button below to start a new game.<br><br>
+        </div>
+        <div>
+            <button v-if="startNewGame" v-on:click="newGame">New Game</button>
+        </div>
+        <div>
+            <table>
+                <tr>
+                    <th>Player Guesses</th>
+                    <th></th>
+                    <th>Computer Guesses</th>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top">
+                        <span v-for='playerGuess in playerGuessArray'>{{ playerGuess }}<br></span>
+                    </td>
+                    <td style="width:50px">
+                        &nbsp;
+                    </td>
+                    <td style="vertical-align: top">
+                        <span v-for='computerGuess in computerGuessArray'>{{ computerGuess }}<br></span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <br><br>
+        <div>
+            Debug:<br>
+            Rounds remaining: {{ remainingRounds }}<br>
+        </div>
     </div>
 </body>
 
