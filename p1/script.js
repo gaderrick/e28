@@ -6,9 +6,12 @@ let app = new Vue({
         'remainingRounds': 0,
         'maxRandomNumber': 100,
         'randomNumber': 0,
-        'playerGuessArray': [1, 2, 3],
-        'computerGuessArray': [4, 5, 6],
-        'startNewGame': true
+        'playerGuessArray': [],
+        'computerGuessArray': [],
+        'playerGuess': '',
+        'startNewGame': true,
+        'statusMessage': '',
+        'computersTurn': false,
     },
     methods: {
         newGame: function () {
@@ -17,6 +20,29 @@ let app = new Vue({
             this.computerGuessArray = [];
             this.randomNumber = Math.round(Math.random() * this.maxRandomNumber);
             this.startNewGame = false;
+        },
+        makeGuess: function () {
+            if (this.playerGuessArray.includes(this.playerGuess)) {
+                alert('You already tried that value.');
+            } else {
+                if (this.playerGuess == this.randomNumber) {
+                    this.statusMessage = 'You guessed the random number!';
+                } else {
+                    this.playerGuessArray.push(this.playerGuess);
+                    this.statusMessage = 'Sorry, you didn\'t pick the random number. ';
+                    if (this.playerGuess < this.randomNumber) {
+                        this.statusMessage += 'Your guess was too low!'
+                    } else {
+                        this.statusMessage += 'Your guess was too high!'
+                    }
+                }
+                this.remainingRounds = this.remainingRounds - 1;
+                this.playerGuess = '';
+                this.computersTurn = true;
+            }
+        },
+        computerGuess: function () {
+
         }
     }
 });

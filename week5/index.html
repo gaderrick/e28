@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Week 5 Examples</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+    <script src='script.js' defer></script>
+
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+
+        img {
+            width: 30px;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .validationError {
+            background-color: red;
+            color: white;
+        }
+
+        .feedback {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Week 5 Examples</h1>
+
+    <div id='app' v-cloak>
+
+        {{ displayWord }}
+
+        <input type='text' v-model='guess'>
+
+        {{ feedback }}
+
+        <!--
+        First name: <input type='text' v-model='firstName'>
+        Last name: <input type='text' v-model='lastName'>
+
+        <p>
+            Hello {{ fullName }}
+        </p> -->
+
+        <!-- Don't combine v-if and v-for-->
+        <!-- <ul>
+            <li v-for='guess in guesses' v-if='guess > correctGuess'>{{ guess }}</li>
+        </ul> -->
+
+        <!-- Use this one 
+        <ul>
+            <li v-for='guess in highGuesses'>{{ guess }}</li>
+        </ul> -->
+
+        <!-- 
+        <div>
+            <label for='answer'>What is 20+15?</label>
+            <input type='text' id='answer' v-model.number.lazy.trim='answer' @keyup.enter='submitAnswer'>
+        </div>
+
+        <div class='feedback' v-bind:class='feedbackClass'>{{ feedback }}</div>
+        <img v-if='answered' :src='"images/" + imageSrc' :alt='imageSrc'>
+
+        Which of the following statements are true?
+        <input type='checkbox' id='oddNumber' value='oddNumber' v-model='statements'>
+        <label for='oddNumber'>The answer is an odd number</label>
+
+        <input type='checkbox' id='greaterThan' value='greaterThan' v-model='statements'>
+        <label for='greaterThan'>The answer is greater than 10</label>
+
+        <input type='checkbox' id='divisibleBy3' value='divisibleBy3' v-model='statements'>
+        <label for='divisibleBy3'>The answer is evenly divisible by three</label>
+
+        <br>Difficulty level:
+
+        <input type='radio' id='easy' value='easy' v-model='level'>
+        <label for='easy'>Easy</label>
+
+        <input type='radio' id='moderate' value='moderate' v-model='level'>
+        <label for='moderate'>Moderate</label>
+
+        <input type='radio' id='difficult' value='difficult' v-model='level'>
+        <label for='difficult'>Difficult</label>
+
+        <select v-model='level'>
+            <option value='easy'>Easy</option>
+            <option value='moderate'>Moderate</option>
+            <option value='difficult'>Difficult</option>
+        </select> -->
+    </div>
+
+
+</body>
+
+</html>
