@@ -35,7 +35,7 @@
         <div v-if="!startNewGame">
             <input type="text" id="txtUserGuess" v-model='playerGuess' v-if="!computersTurn">
             <input type="button" value="Make a Guess" v-on:click="makeGuess" v-if="!computersTurn">
-            <input type="button" value="Click for Computer Turn" v-on:click="computerGuess" v-if="computersTurn">
+            <input type="button" value="Click for Computer Turn" v-on:click="makeComputerGuess" v-if="computersTurn">
             <br><br>
         </div>
         <div>
@@ -65,7 +65,6 @@
         <div>
             Random number: {{ randomNumber }}<br>
             Rounds remaining: {{ remainingRounds }}<br>
-            Player's guess: {{ playerGuess }}
         </div>
     </div>
 </body>
