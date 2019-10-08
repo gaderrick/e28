@@ -85,7 +85,9 @@ let app = new Vue({
                 this.computerGuess = Math.round(Math.random() * this.maxRandomNumber) + 1;
             } else {
                 // Computer logic to make follow up selections
-                this.computerGuess = Math.round(Math.random() * (this.highWater - this.lowWater)) + this.lowWater;
+                do
+                    this.computerGuess = Math.round(Math.random() * (this.highWater - this.lowWater)) + this.lowWater;
+                while (this.computerGuessArray.includes(this.computerGuess));
             }
 
             if (this.computerGuess == this.randomNumber) {
@@ -150,6 +152,7 @@ let app = new Vue({
                         this.wasLow = true;
                     // Noone won
                 }
+                this.startNewGame = true;
             }
         }
     }
