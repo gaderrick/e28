@@ -14,6 +14,18 @@
         [v-cloak] {
             display: none;
         }
+
+        .low {
+            background-color: yellow;
+        }
+
+        .high {
+            background-color: red;
+        }
+
+        .correct {
+            background-color: green;
+        }
     </style>
 </head>
 
@@ -27,13 +39,15 @@
             2) You guess first, the computer will guess second.<br>
             3) The game ends when either the number is guessed, or each player makes {{ maxAllowedGuesses}} incorrect
             guesses.<br>
-            4) Click the button below to start a new game.<br><br>
+            4) If the player guesses correctly, the computer has a final chance to guess to tie.
+            5) Click the button below to start a new game.<br><br>
         </div>
-        <div v-if="!statusMessage == ''">
-            {{ statusMessage }}<br><br>
+        <div v-if="!statusMessage == ''" v-bind:class="{ low : wasLow, high : wasHigh, correct : wasCorrect}">
+            {{ statusMessage }}
         </div>
+        <br>
         <div v-if="!startNewGame">
-            <input type="text" id="txtUserGuess" v-model='playerGuess' v-if="!computersTurn">
+            <input type="text" id="txtUserGuess" v-model.Number='playerGuess' v-if="!computersTurn">
             <input type="button" value="Make a Guess" v-on:click="makeGuess" v-if="!computersTurn">
             <input type="button" value="Click for Computer Turn" v-on:click="makeComputerGuess" v-if="computersTurn">
             <br><br>
