@@ -55,29 +55,8 @@
         <div>
             <button v-if="startNewGame" v-on:click="newGame">New Game</button>
         </div>
-        <div>
-            <table>
-                <tr>
-                    <th>Player Guesses</th>
-                    <th></th>
-                    <th>Computer Guesses</th>
-                </tr>
-                <tr>
-                    <td style="vertical-align: top">
-                        <span v-for='playerGuess in playerGuessArray'>{{ playerGuess }}<br></span>
-                    </td>
-                    <td style="width:50px">
-                        &nbsp;
-                    </td>
-                    <td style="vertical-align: top">
-                        <span v-for='computerGuess in computerGuessArray'>{{ computerGuess }}<br></span>
-                    </td>
-                </tr>
-            </table>
-        </div>
         <br><br>
         <div>
-            Random number: {{ randomNumber }}<br>
             Rounds remaining: {{ remainingRounds }}<br>
         </div>
     </div>
