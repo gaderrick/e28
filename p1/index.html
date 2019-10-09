@@ -39,7 +39,7 @@
             2) You guess first, the computer will guess second.<br>
             3) The game ends when either the number is guessed, or each player makes {{ maxAllowedGuesses}} incorrect
             guesses.<br>
-            4) If the player guesses correctly, the computer has a final chance to guess to tie.
+            4) If the player guesses correctly, the computer has a final chance to guess to tie.<br>
             5) Click the button below to start a new game.<br><br>
         </div>
         <div v-if="!statusMessage == ''" v-bind:class="{ low : wasLow, high : wasHigh, correct : wasCorrect}">

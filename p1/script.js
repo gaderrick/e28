@@ -41,6 +41,10 @@ let app = new Vue({
             this.lowWater = 0;
             this.highWater = this.maxRandomNumber;
             this.whoWon = 0
+            this.statusMessage = '';
+            this.wasLow = false;
+            this.wasHigh = false;
+            this.wasCorrect = false;
         },
         makeGuess: function () {
             this.wasLow = false;
