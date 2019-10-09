@@ -1,9 +1,9 @@
-# Project 1
+# Project 1 - High/Low Guessing 
 + By: Gerald Derrick
 + Production URL: <http://p1.gaderrick.me>
 
 ## Outside resources
-https://www.w3schools.com/js/js_random.asp, JavaScript Random Function
+JavaScript Random Function, https://www.w3schools.com/js/js_random.asp
 
 ## Notes for instructor
-*any notes for me to refer to while grading; if none, omit this section*
++ This game "simulates" the computer player by requiring the player to click a button to activate the computer's logic routine.
