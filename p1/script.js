@@ -2,30 +2,31 @@ let app = new Vue({
     el: '#app',
 
     data: {
-        'maxAllowedGuesses': 10,
-        'remainingRounds': 0,
-        'maxRandomNumber': 100,
-        'randomNumber': 0,
-        'playerGuessArray': [],
-        'playerGuess': '',
-        'playerRoundsTaken': '0',
-        'playerGameOver': false,
-        'computerGuessArray': [],
-        'computerGuess': '',
-        'computerRoundsTaken': '0',
-        'computerGameOver': false,
-        'computersTurn': false,
-        'startNewGame': true,
-        'statusMessage': '',
-        'lowWater': '',
-        'highWater': '',
-        'wasLow': false,
-        'wasHigh': false,
-        'wasCorrect': false,
-        'whoWon': 0,
+        'maxAllowedGuesses': 10,        // max number of guesses allowed for each game
+        'remainingRounds': 0,           // tracks the number of rounds remaining
+        'maxRandomNumber': 100,         // The max number the random number could be
+        'randomNumber': 0,              // The random number to be guessed
+        'playerGuessArray': [],         // Holds the player's historical guesses
+        'playerGuess': '',              // Player's guess
+        'playerRoundsTaken': '0',       // # of rounds taken by player to guess the number
+        'playerGameOver': false,        // Status of the player's game
+        'computerGuessArray': [],       // Holds the computer's historical guesses
+        'computerGuess': '',            // Computer's guesses
+        'computerRoundsTaken': '0',     // # of rounds taken by computer to guess the number
+        'computerGameOver': false,      // Status of the computer's game
+        'computersTurn': false,         // Tracks if it is the computer's turn
+        'startNewGame': true,           // Flag to track if a new game is starting
+        'statusMessage': '',            // Variable to hold messages for the game
+        'lowWater': '',                 // Tracks the computer's lowest guess for logic purposes
+        'highWater': '',                // Tracks the computer's highest guess for logic purposes
+        'wasLow': false,                // Used to set the class of status messages
+        'wasHigh': false,               // Used to set the class of status messages
+        'wasCorrect': false,            // Used to set the class of status messages
+        'whoWon': 0,                    // Holds the value of who one
     },
     methods: {
         newGame: function () {
+            // This function initializes the new game and all the variables needed
             this.remainingRounds = this.maxAllowedGuesses;
             this.playerGuessArray = [];
             this.playerGuess = '';
@@ -47,6 +48,7 @@ let app = new Vue({
             this.wasCorrect = false;
         },
         makeGuess: function () {
+            // This function handles the logic for the player
             this.wasLow = false;
             this.wasHigh = false;
             this.wasCorrect = false;
@@ -81,6 +83,7 @@ let app = new Vue({
             }
         },
         makeComputerGuess: function () {
+            // This function handles the computer's picks
             this.wasLow = false;
             this.wasHigh = false;
             this.wasCorrect = false;
@@ -89,11 +92,13 @@ let app = new Vue({
                 this.computerGuess = Math.round(Math.random() * this.maxRandomNumber) + 1;
             } else {
                 // Computer logic to make follow up selections
+                // The do loop handles the situation where the computer's next pick was already selected by the computer
                 do
                     this.computerGuess = Math.round(Math.random() * (this.highWater - this.lowWater)) + this.lowWater;
                 while (this.computerGuessArray.includes(this.computerGuess));
             }
 
+            // Logic to check and evalate the computer's guess
             if (this.computerGuess == this.randomNumber) {
                 this.statusMessage = 'Computer guessed the number!';
                 this.wasCorrect = true;
@@ -113,6 +118,7 @@ let app = new Vue({
                 }
             }
 
+            // Add the computer's guess to the array that tracks the computer's guesses
             this.computerGuessArray.push(this.computerGuess);
 
             if (this.remainingRounds == 0) {
@@ -135,6 +141,7 @@ let app = new Vue({
                     this.whoWon += 3;
                 }
 
+                // The following switch statement controls the logic for determining who won the game
                 switch (this.whoWon) {
                     case 1:
                         // Player won
