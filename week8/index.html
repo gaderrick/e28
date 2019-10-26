@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Week 6 Examples</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <script src="" defer></script>
+    <script src='js/script.js' defer></script>
+
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+
+        .winner {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Week 8 Examples</h1>
+
+    <div id='app' v-cloak>
+        <div>
+            <label><input type='radio' value='heads' v-model='choice'>heads</label>
+            <label><input type='radio' value='tails' v-model='choice'>tails</label>
+        </div>
+
+        <button id='flipBtn' v-on:click='flip'>Flip!</button>
+
+        <round-detail v-for='round in rounds' :number='round.number' :winner='round.winner' :key='round.number'
+            v-on:delete-round='deleteRound($event)'>
+            <template v-slot:choice>You chose {{ round.choice }}</template>
+            <template v-slot:coin>The coin landed on {{ round.coin }}</template>
+        </round-detail>
+    </div>
+</body>
+
+</html>
