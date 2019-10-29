@@ -4,24 +4,90 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Project 2</title>
+    <title>Project 2 - Gerald Derrick</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-    <script src="" defer></script>
-    <script src='js/script.js' defer></script>
+    <script src='/js/script.js' defer></script>
 
     <style>
         [v-cloak] {
             display: none;
         }
+
+        .Table {
+            display: table;
+        }
+
+        .Heading {
+            display: table-row;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .Cell {
+            display: table-cell;
+            border: solid;
+            border-width: thin;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
     </style>
 </head>
 
 <body>
-    <h1>Project 2</h1>
-
+    <h1>Project 2 - Gerald Derrick</h1>
+    <h2>High/Low Guessing Game</h2>
     <div id='app' v-cloak>
-
+        <div>
+            <button v-on:click="toggleRules()">Toggle Rules</button>
+            <div v-show="showRules">
+                The rules of the game are simple:<br>
+                1) Your goal is to select a randomly selected number between 1 and {{ maxRandomNumber }}.<br>
+                2) You guess first, the computer will guess second.<br>
+                3) The game ends when either the number is guessed, or each player makes {{ maxAllowedGuesses}}
+                incorrect guesses.<br>
+                4) If the player guesses correctly, the computer has a final chance to guess to tie.<br>
+                5) Click the button below to start a new game.<br><br>
+            </div>
+        </div>
+        <div>
+            <button v-if="startNewGame" v-on:click="startGame()">Start a New Game</button>
+            <button v-else v-on:click="surrender()">Surrender to the Machine</button>
+        </div>
+        <div v-if="!startNewGame">
+            <div>
+                <input type="text" id="txtUserGuess" v-model.Number="playerGuess" />
+                <input type="button" value="Make a Guess" v-on:click="makePlayerGuess" />
+            </div>
+        </div>
+        <div>
+            <div>
+                <p>Game History Log</p>
+            </div>
+            <div class="Table">
+                <div class="Heading">
+                    <div class="Cell">
+                        <p>Round</p>
+                    </div>
+                    <div class="Cell">
+                        <p>Player</p>
+                    </div>
+                    <div class="Cell">
+                        <p>Guess</p>
+                    </div>
+                    <div class="Cell">
+                        <p>Message</p>
+                    </div>
+                    <div class="Cell">
+                        <p>Correct?</p>
+                    </div>
+                </div>
+                <game-log v-for="g in gameGuesses" :number="g.number" :who="g.who" :guess="g.guess" :message="g.message"
+                    :correct-guess="g.correctGuess">
+                </game-log>
+            </div>
+        </div>
+    </div>
     </div>
 </body>
 
