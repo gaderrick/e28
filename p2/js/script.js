@@ -139,11 +139,7 @@ module.exports = {
       "default": ""
     }
   },
-  methods: {// deleteRound() {
-    //   console.log(this.$root.rounds);
-    // }
-  },
-  template: "#game-log"
+  methods: {}
 };
 
 /***/ }),
@@ -160,7 +156,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "\n.Row {\n  display: table-row;\n}\n.Cell {\n  display: table-cell;\n  border: solid;\n  border-width: thin;\n  padding-left: 5px;\n  padding-right: 5px;\n}\n", ""]);
+exports.push([module.i, "\n.Row {\n  display: table-row;\n}\n.Cell {\n  display: table-cell;\n  border: solid;\n  border-width: thin;\n  padding-left: 5px;\n  padding-right: 5px;\n}\n.NotMatch {\n  background: red;\n  text-align: center;\n}\n.Match {\n  background: green;\n  text-align: center;\n}\n", ""]);
 
 // exports
 
@@ -1287,9 +1283,19 @@ var render = function() {
       _c("p", [_vm._v(_vm._s(_vm.message))])
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "Cell" }, [
-      _c("p", [_vm._v(_vm._s(_vm.correctGuess))])
-    ])
+    _c(
+      "div",
+      {
+        staticClass: "Cell",
+        class: [
+          {
+            Match: _vm.correctGuess == true,
+            NotMatch: _vm.correctGuess == false
+          }
+        ]
+      },
+      [_c("p", [_vm._v(_vm._s(_vm.correctGuess ? "Yes" : "No"))])]
+    )
   ])
 }
 var staticRenderFns = []

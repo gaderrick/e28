@@ -82,8 +82,8 @@
                         <p>Correct?</p>
                     </div>
                 </div>
-                <game-log v-for="g in gameGuesses" :number="g.number" :who="g.who" :guess="g.guess" :message="g.message"
-                    :correct-guess="g.correctGuess">
+                <game-log v-for="(g,index) in gameGuesses" :number="g.number" :who="g.who" :guess="g.guess"
+                    :message="g.message" :correct-guess="g.correctGuess" :key="index">
                 </game-log>
             </div>
         </div>

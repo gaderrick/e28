@@ -12,8 +12,8 @@
     <div class="Cell">
       <p>{{ message }}</p>
     </div>
-    <div class="Cell">
-      <p>{{ correctGuess }}</p>
+    <div class="Cell" :class="[{ Match : correctGuess == true, NotMatch : correctGuess == false }]">
+      <p>{{ correctGuess ? "Yes" : "No"}}</p>
     </div>
   </div>
 </template>
@@ -45,12 +45,7 @@ module.exports = {
       default: ""
     }
   },
-  methods: {
-    // deleteRound() {
-    //   console.log(this.$root.rounds);
-    // }
-  },
-  template: "#game-log"
+  methods: {}
 };
 </script>
 
@@ -64,5 +59,13 @@ module.exports = {
   border-width: thin;
   padding-left: 5px;
   padding-right: 5px;
+}
+.NotMatch {
+  background: red;
+  text-align: center;
+}
+.Match {
+  background: green;
+  text-align: center;
 }
 </style>
