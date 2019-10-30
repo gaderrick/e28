@@ -4,6 +4,9 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <title>Project 2 - Gerald Derrick</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
@@ -31,15 +34,18 @@
             padding-left: 5px;
             padding-right: 5px;
         }
+
+        .Button {
+            height: 40px;
+        }
     </style>
 </head>
 
 <body>
-    <h1>Project 2 - Gerald Derrick</h1>
-    <h2>High/Low Guessing Game</h2>
+    <h1>Project 2 - Gerald Derrick | High/Low Guessing Game</h1>
     <div id='app' v-cloak>
         <div>
-            <button v-on:click="toggleRules()">Toggle Rules</button>
+            <button class="Button" v-on:click="toggleRules()">Toggle Rules</button>
             <div v-show="showRules">
                 The rules of the game are simple:<br>
                 1) Your goal is to select a randomly selected number between 1 and {{ maxRandomNumber }}.<br>
@@ -49,45 +55,46 @@
                 4) If the player guesses correctly, the computer has a final chance to guess to tie.<br>
                 5) Click the button below to start a new game.<br><br>
             </div>
-        </div>
-        <div>
-            <button v-if="startNewGame" v-on:click="startGame()">Start a New Game</button>
-            <button v-else v-on:click="surrender()">Surrender to the Machine</button>
-        </div>
-        <div v-if="!startNewGame">
-            <div>
-                <input type="text" id="txtUserGuess" v-model.Number="playerGuess" />
-                <input type="button" value="Make a Guess" v-on:click="makePlayerGuess" />
-            </div>
-        </div>
-        <div>
-            <div>
-                <p>Game History Log</p>
-            </div>
-            <div class="Table">
-                <div class="Heading">
-                    <div class="Cell">
-                        <p>Round</p>
-                    </div>
-                    <div class="Cell">
-                        <p>Player</p>
-                    </div>
-                    <div class="Cell">
-                        <p>Guess</p>
-                    </div>
-                    <div class="Cell">
-                        <p>Message</p>
-                    </div>
-                    <div class="Cell">
-                        <p>Correct?</p>
-                    </div>
+            <button class="Button" v-if="startNewGame" v-on:click="startGame()">Start a New Game</button>
+            <button class="Button" v-else v-on:click="surrender()">Quit Current Game</button><br><br>
+            <button class="Button" v-if="computersTurn && !computerGameOver" v-on:click="makeComputerGuess()">Click for
+                the Computer's Turn</button>
+            <div v-if="!startNewGame && !playerGameOver && !computersTurn">
+                <div>&nbsp;</div>
+                <div>
+                    <input type="text" id="txtUserGuess" v-model.Number="playerGuess" />
+                    <button class="Button" v-on:click="makePlayerGuess()">Make a Guess</button>
                 </div>
-                <game-log v-for="(g,index) in gameGuesses" :number="g.number" :who="g.who" :guess="g.guess"
-                    :message="g.message" :correct-guess="g.correctGuess" :key="index">
-                </game-log>
+            </div>
+            <div>
+                <div>
+                    <h3 v-if="showGameOverMessage==''">Game Play History</h3>
+                    <h3 v-else>Game Play History - {{ showGameOverMessage }}</h3>
+                </div>
+                <div class="Table">
+                    <div class="Heading">
+                        <div class="Cell">
+                            <p>Round</p>
+                        </div>
+                        <div class="Cell">
+                            <p>Player</p>
+                        </div>
+                        <div class="Cell">
+                            <p>Guess</p>
+                        </div>
+                        <div class="Cell">
+                            <p>Message</p>
+                        </div>
+                        <div class="Cell">
+                            <p>Correct?</p>
+                        </div>
+                    </div>
+                    <game-log v-for="(g,index) in gameGuesses" :number="g.number" :who="g.who" :guess="g.guess"
+                        :message="g.message" :correct-guess="g.correctGuess" :key="index">
+                    </game-log>
+                </div>
             </div>
         </div>
-    </div>
     </div>
 </body>
 
