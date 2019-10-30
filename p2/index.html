@@ -62,7 +62,8 @@
             <div v-if="!startNewGame && !playerGameOver && !computersTurn">
                 <div>&nbsp;</div>
                 <div>
-                    <input type="text" id="txtUserGuess" v-model.Number="playerGuess" />
+                    <input type="number" v-model.Number="playerGuess" />
+                    <!--input type="text" id="txtUserGuess" v-model.Number="playerGuess" / -->
                     <button class="Button" v-on:click="makePlayerGuess()">Make a Guess</button>
                 </div>
             </div>
