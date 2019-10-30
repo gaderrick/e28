@@ -73,7 +73,7 @@ let app = new Vue({
                 if (this.playerGuess == this.randomNumber) {
                     this.statusMessage = 'Player guessed the random number!';
                     this.wasCorrect = true;
-                    this.playerFinalRound = this.currentRound;                             // use this for determining game over status
+                    this.playerFinalRound = this.currentRound;
                     this.playerGameOver = true;
                 } else {
                     if (this.playerGuess < this.randomNumber) {
@@ -184,9 +184,9 @@ let app = new Vue({
                         this.wasCorrect = true;
                         break;
                     default:
+                        // Noone won
                         this.showGameOverMessage = 'Neither the player nor computer won.';
                         this.wasLow = true;
-                    // Noone won
                 }
                 this.startNewGame = true;
             }
