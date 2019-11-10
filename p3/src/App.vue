@@ -25,7 +25,8 @@ export default {
     },
     data: function() {
         return {
-            links: ['home', 'recipes', 'vault']
+            links: ['home', 'recipes', 'vault'],
+            recipes: null
         };
     }
 };
