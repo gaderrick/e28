@@ -1,5 +1,7 @@
 <template>
-    <div id='header'>This is the header placeholder</div>
+    <div id='header'>
+        <img id='logo' src='./../../assets/logo-small.png' />
+    </div>
 </template>
 <script>
 export default {
