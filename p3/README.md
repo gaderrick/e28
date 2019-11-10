@@ -1,24 +1,14 @@
-# p3
+# Project 3 - Beer Recipes
++ By: Gerald Derrick
++ Production URL: <http://p3.gaderrick.me>
 
-## Project setup
-```
-npm install
-```
+## Build strategy
+*Put an x in the build strategy you used. Put an x in each if you tackled both.*
++ [ ] Integrated
++ [x] Comprehensive
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Outside resources
++ Beer Icons, https://www.vectorstock.com/royalty-free-vector/craft-beer-icon-vector-21137407
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Notes for instructor
++ 
