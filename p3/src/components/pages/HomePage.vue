@@ -1,12 +1,7 @@
 <template>
     <div>
-        <br />
-        <br />This is the
-        <a>Home Page</a>
-        <br />
         <span>There are {{ recipes.length }} recipes in the database.</span>
-        <br />
-        <br />
+        <div v-for='recipe in recipes' :key='recipe.id'>{{ recipe.name }}</div>
     </div>
 </template>
 <script>
@@ -22,14 +17,10 @@ export default {
         };
     },
     mounted() {
-        app.axios
-            // .get(app.config.api + 'recipes')
-            // .then(response => (this.recipes = response.data));
-            .get(app.config.api + 'recipes')
-            .then(response => {
-                this.recipes = response.data;
-                console.log(response.data);
-            });
+        app.axios.get(app.config.api + 'recipes').then(response => {
+            this.recipes = response.data;
+            console.log(response.data);
+        });
     }
 };
 </script>

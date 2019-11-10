@@ -12,7 +12,7 @@ Vue.config.productionTip = false;
 const routes = [
   { path: '/', component: HomePage, name: 'home' },
   { path: '/recipes', component: RecipesPage, name: 'recipes' },
-  { path: '/recipe/:id', component: RecipePage, name: 'recipe', props: true },
+  { path: '/recipes/:id', component: RecipePage, name: 'recipe', props: true },
   { path: '/vault', component: VaultPage, name: 'vault' }
 ];
 
