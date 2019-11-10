@@ -1,5 +1,5 @@
 <template>
-    <div></div>
+    <div id='header'>This is the header placeholder</div>
 </template>
 <script>
 export default {

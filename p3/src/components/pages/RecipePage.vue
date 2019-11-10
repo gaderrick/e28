@@ -1,5 +1,11 @@
 <template>
-    <div></div>
+    <div>
+        <br />
+        <br />This is the Recipe Page
+        <br />
+        <br />
+        <br />
+    </div>
 </template>
 <script>
 export default {

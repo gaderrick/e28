@@ -1,5 +1,12 @@
 <template>
-    <div></div>
+    <div>
+        <br />
+        <br />This is the
+        <a>Home Page</a>
+        <br />
+        <br />
+        <br />
+    </div>
 </template>
 <script>
 export default {

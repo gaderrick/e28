@@ -1,28 +1,36 @@
 <template>
     <div id='app'>
-        <img alt='Vue logo' src='./assets/logo.png' />
-        <HelloWorld msg='Welcome to Your Vue.js App' />
+        <SiteHeader></SiteHeader>
+        <nav>
+            <ul>
+                <li v-for='link in links' :key='link'>
+                    <router-link exact :to='{name:link}'>{{ link }}</router-link>
+                </li>
+            </ul>
+        </nav>
+        <router-view></router-view>
+        <SiteFooter></SiteFooter>
     </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import SiteHeader from './components/common/SiteHeader.vue';
+import SiteFooter from './components/common/SiteFooter.vue';
 
 export default {
     name: 'app',
     components: {
-        HelloWorld
+        SiteHeader,
+        SiteFooter
+    },
+    data: function() {
+        return {
+            links: ['home', 'recipes', 'vault']
+        };
     }
 };
 </script>
 
-<style>
-#app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
-}
+<style lang='scss'>
+@import './assets/css/p3.scss';
 </style>

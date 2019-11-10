@@ -1,5 +1,5 @@
 <template>
-    <div></div>
+    <div id='footer'>This is the footer placeholder</div>
 </template>
 <script>
 export default {

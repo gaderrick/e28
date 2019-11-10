@@ -1,5 +1,11 @@
 <template>
-    <div></div>
+    <div>
+        <br />
+        <br />This is the Vault Page
+        <br />
+        <br />
+        <br />
+    </div>
 </template>
 <script>
 export default {
