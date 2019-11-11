@@ -1,8 +1,6 @@
 <template>
     <div>
-        <br />
         <br />This is the Vault Page
-        <br />
         <br />
         <br />
     </div>

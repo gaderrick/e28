@@ -1,7 +1,8 @@
 <template>
     <div>
-        <span>There are {{ recipes.length }} recipes in the database.</span>
-        <div v-for='recipe in recipes' :key='recipe.id'>{{ recipe.name }}</div>
+        <span>There are currently {{ sharedState.recipes.length }} recipes in the database.</span>
+        <br />
+        <br />
     </div>
 </template>
 <script>
@@ -12,16 +13,10 @@ export default {
     components: {},
     data: function() {
         return {
-            recipes: [],
-            recipeCount: 0
+            sharedState: app.site
         };
     },
-    mounted() {
-        app.axios.get(app.config.api + 'recipes').then(response => {
-            this.recipes = response.data;
-            console.log(response.data);
-        });
-    }
+    mounted() {}
 };
 </script>
 

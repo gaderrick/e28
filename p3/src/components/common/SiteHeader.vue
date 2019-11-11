@@ -4,11 +4,21 @@
     </div>
 </template>
 <script>
+import * as app from './../../app.js';
+
 export default {
     name: 'SiteHeader',
     components: {},
     data: function() {
-        return {};
+        return {
+            sharedState: app.site
+        };
+    },
+    mounted() {
+        app.axios.get(app.config.api + 'recipes').then(response => {
+            app.site.recipes = response.data;
+            console.log(response.data);
+        });
     }
 };
 </script>

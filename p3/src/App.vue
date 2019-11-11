@@ -1,13 +1,14 @@
 <template>
     <div id='app'>
         <SiteHeader></SiteHeader>
-        <nav>
-            <ul>
-                <li v-for='link in links' :key='link'>
-                    <router-link exact :to='{name:link}'>{{ link }}</router-link>
-                </li>
-            </ul>
-        </nav>
+        <div>
+            <br />
+            <router-link exact to='/'>Home</router-link>&nbsp;&nbsp;
+            <router-link exact to='/recipes'>Recipes</router-link>&nbsp;&nbsp;
+            <router-link exact to='/vault'>Vault</router-link>
+            <br />
+            <br />
+        </div>
         <router-view></router-view>
         <SiteFooter></SiteFooter>
     </div>
@@ -25,8 +26,7 @@ export default {
     },
     data: function() {
         return {
-            links: ['home', 'recipes', 'vault'],
-            recipes: null
+            links: ['home', 'recipes', 'vault']
         };
     }
 };

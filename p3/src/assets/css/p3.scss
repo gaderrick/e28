@@ -56,7 +56,7 @@ GENERAL PAGE LAYOUT/DESIGN
 -----------------------------------------------------*/
 #app {
     //max-width: 1100px;
-    width: 100%;
+    width: 90%;
     margin: auto;
     padding-bottom: 20px;
     text-align: center;
@@ -78,7 +78,7 @@ GENERAL PAGE LAYOUT/DESIGN
 
 #logo {
     /* Actual width is 636; displaying at half-size for retina screens */
-    width: 100%;
+    width: 90%;
 }
 
 nav ul {
@@ -115,8 +115,26 @@ nav ul {
         }
     }
 }
+a:link,
+a:visited,
+a:active,
+a:hover {
+    text-transform: capitalize;
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+    color: $blue;
+}
 
-
+a.router-link-active:link,
+a.router-link-active:visited,
+a.router-link-active:active,
+a.router-link-active:hover {
+    text-decoration: none;
+    color: $black;
+    background-color: white;
+    cursor: inherit;
+}
 /*----------------------------------------------------
 PAGE SPECIFIC
 -----------------------------------------------------*/
