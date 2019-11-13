@@ -5,9 +5,21 @@
         <br />
         <span>This month's featured recipes</span>
         <br />
-        <br />
-        <show-featured :id='1'></show-featured>
-        <show-featured :id='3'></show-featured>
+        <div class='container'>
+            <div class='divTable'>
+                <div class='divTableBody'>
+                    <div class='divTableRow'>
+                        <div class='divTableCell'>
+                            <show-featured :id='1'></show-featured>
+                        </div>
+                        <div class='divTableCell'>&nbsp;</div>
+                        <div class='divTableCell'>
+                            <show-featured :id='3'></show-featured>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 <script>
@@ -28,4 +40,24 @@ export default {
 </script>
 
 <style scoped>
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+.divTable {
+    display: table;
+    margin: auto;
+}
+.divTableRow {
+    display: table-row;
+}
+.divTableCell {
+    display: table-cell;
+    width: 33%;
+    text-align: center;
+}
+.divTableBody {
+    display: table-row-group;
+}
 </style>

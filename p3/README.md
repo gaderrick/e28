@@ -9,6 +9,8 @@
 
 ## Outside resources
 + Beer Icons, https://www.vectorstock.com/royalty-free-vector/craft-beer-icon-vector-21137407
++ How to decode HTML in VUE js, https://laracasts.com/discuss/channels/vue/escape-html-characters-with-vuejs?page=1
++ Generate DIV layouts, https://divtable.com/generator/
 
 ## Notes for instructor
 + 

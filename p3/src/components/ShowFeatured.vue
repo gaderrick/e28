@@ -1,6 +1,12 @@
 <template>
     <div>
-        <li v-for='recipe in featuredRecipes' :key='recipe.id'>{{ recipe.name }}</li>
+        <span v-for='recipe in featuredRecipes' :key='recipe.id'>
+            <router-link :to='{ name: "recipe", params: {"id": recipe.id}}'>
+                <img :src='require("./../assets/images/" + recipe.image)' />
+                <br />
+                {{ recipe.name }}
+            </router-link>
+        </span>
     </div>
 </template>
 <script>
@@ -27,4 +33,10 @@ export default {
 </script>
 
 <style scoped>
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
 </style>
