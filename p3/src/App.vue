@@ -4,8 +4,8 @@
     <div>
       <br />
       <router-link exact :to='{name: "home"}'>Home</router-link>&nbsp;&nbsp;
-      <router-link exact :to='{name: "recipes"}'>Recipes</router-link>&nbsp;&nbsp;
-      <router-link exact :to='{name: "vault"}'>Vault</router-link>&nbsp;|&nbsp;
+      <router-link exact :to='{name: "recipes"}'>Recipe Catalog</router-link>&nbsp;&nbsp;
+      <router-link exact :to='{name: "myStuff"}'>My Stuff</router-link>&nbsp;|&nbsp;
       <router-link exact :to='{name: "editRecipe", params: {propId: 0 }}'>Add a Recipe</router-link>
       <br />
       <br />
@@ -27,7 +27,7 @@ export default {
   },
   data: function() {
     return {
-      links: ['home', 'recipes', 'vault']
+      //links: ['home', 'recipes', 'mystuff']
     };
   }
 };

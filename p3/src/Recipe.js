@@ -1,7 +1,7 @@
 export default class Recipe {
 
     constructor() {
-        // Extract JSON cart string from local storage
+        // Extract JSON recipe string from local storage
         let localRecipe = localStorage.getItem('recipe');
 
         // Parse JSON recipe String to `recipe` object
@@ -28,14 +28,14 @@ export default class Recipe {
         return this.recipe;
     }
 
-    add(theRecipe, recipeId, maxRecipeId) {
-        console.log("The recipe: " + theRecipe);
-
+    add(theRecipe, recipeId) { // , maxRecipeId
         // First see if product is already present
         let test = this.findRecipe(recipeId)
+        console.log("Recipe exists? " + test);
         if (test) {
             // Recipe is already stored; update it
-            this[maxRecipeId] = theRecipe;
+            this.recipe[recipeId] = theRecipe;
+            console.log(this.recipe);
         } else {
             // Recipe is new; add it to the local storage variable
 
@@ -51,25 +51,22 @@ export default class Recipe {
         localStorage.setItem('recipe', JSON.stringify(this.recipe))
     }
 
-    maxIndex() {
-        let maxId = 0;
-        for (let key of Object.keys(this)) {
-            if (this[key].id > maxId) {
-                maxId = this.localRecipe[key].id + 1;
-            }
-        }
-        return maxId;
-    }
-
     /*** Get a recipe if it exists ***/
     findRecipe(recipeId) {
-        console.log("Testing");
+        console.log("In findRecipe..." + recipeId);
         let found = false;
-        for (let key of Object.keys(this)) {
-            if (this[key].id == recipeId) {
-                found = true;
-            }
+        if (typeof this.recipe[recipeId] === 'undefined') {
+            console.log('Recipe not found');
+            found = false;
+        } else {
+            found = true;
+            console.log('Recipe found');
         }
+        // for (let key of Object.keys(this)) {
+        //     if (this[key].id == recipeId) {
+        //         found = true;
+        //     }
+        // }
         return found;
     }
 }

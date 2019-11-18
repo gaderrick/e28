@@ -4,7 +4,7 @@ import VueRouter from 'vue-router';
 import HomePage from './components/pages/HomePage.vue';
 import RecipesPage from './components/pages/RecipesPage.vue';
 import RecipePage from './components/pages/RecipePage.vue';
-import VaultPage from './components/pages/VaultPage.vue';
+import MyStuffPage from './components/pages/MyStuffPage.vue';
 import EditRecipePage from './components/pages/EditRecipePage.vue';
 
 Vue.use(VueRouter);
@@ -14,7 +14,7 @@ const routes = [
   { path: '/', component: HomePage, name: 'home' },
   { path: '/recipes', component: RecipesPage, name: 'recipes' },
   { path: '/recipes/:id', component: RecipePage, name: 'recipe', props: true },
-  { path: '/vault', component: VaultPage, name: 'vault' },
+  { path: '/mystuff', component: MyStuffPage, name: 'myStuff' },
   { path: '/recipes/edit/:propId', component: EditRecipePage, name: 'editRecipe', props: true }
 ];
 

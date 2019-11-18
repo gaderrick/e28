@@ -173,7 +173,6 @@ export default {
   mounted() {
     this.id = this.propId;
     this.localRecipe = new app.Recipe().getDetails();
-
     if (this.localRecipe[this.id] == null) {
       this.id = 0;
     }
@@ -231,13 +230,10 @@ export default {
     },
     saveRecipe: function(action, recipeId) {
       let recipeList = new app.Recipe();
-      //recipeList.add(this.recipe);
 
       switch (action) {
         case 'save':
-          this.maxLocalId = recipeList.maxIndex() + 1;
-          recipeList.add(this.recipe, recipeId, this.maxLocalId);
-          this.id = this.maxLocalId;
+          recipeList.add(this.recipe, -1);
           this.newRecipe = false;
 
           // this.addAlert = true;
@@ -245,7 +241,9 @@ export default {
           break;
 
         case 'update':
-          console.log(recipeId);
+          console.log('Updating Recipe ID:' + recipeId);
+          recipeList.add(this.recipe, recipeId);
+          this.newRecipe = false;
           break;
         default:
           break;
