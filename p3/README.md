@@ -9,6 +9,7 @@
 + How to decode HTML in VUE js, https://laracasts.com/discuss/channels/vue/escape-html-characters-with-vuejs?page=1
 + Generate DIV layouts, https://divtable.com/generator/
 + Conditionally render an HTML object based on an array's length, https://stackoverflow.com/questions/42740105/vue-check-if-you-are-on-the-last-prop-of-a-v-for-loop
++ How to programmatically redirect to a route, https://router.vuejs.org/guide/essentials/navigation.html
 
 ## Notes for instructor
 + 

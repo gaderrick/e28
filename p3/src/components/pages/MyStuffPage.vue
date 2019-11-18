@@ -1,6 +1,12 @@
 <template>
   <div>
-    <div v-for='(recipe, index) in localRecipes' :key='index'>{{ recipe.recipeName }}</div>
+    <div v-for='(recipe, index) in localRecipes' :key='index'>
+      <router-link
+        v-if='index != ""'
+        exact
+        :to='{name: "editRecipe", params: {propId: index }}'
+      >{{ recipe.recipeName }}</router-link>
+    </div>
   </div>
 </template>
 

@@ -248,6 +248,7 @@ export default {
         default:
           break;
       }
+      this.$router.push({ name: 'myStuff' });
     },
     decodeHtml: function(html) {
       var txt = document.createElement('textarea');
