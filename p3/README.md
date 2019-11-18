@@ -2,15 +2,13 @@
 + By: Gerald Derrick
 + Production URL: <http://p3.gaderrick.me>
 
-## Build strategy
-*Put an x in the build strategy you used. Put an x in each if you tackled both.*
-+ [ ] Integrated
-+ [x] Comprehensive
+## Outline of features
 
 ## Outside resources
 + Beer Icons, https://www.vectorstock.com/royalty-free-vector/craft-beer-icon-vector-21137407
 + How to decode HTML in VUE js, https://laracasts.com/discuss/channels/vue/escape-html-characters-with-vuejs?page=1
 + Generate DIV layouts, https://divtable.com/generator/
++ Conditionally render an HTML object based on an array's length, https://stackoverflow.com/questions/42740105/vue-check-if-you-are-on-the-last-prop-of-a-v-for-loop
 
 ## Notes for instructor
 + 

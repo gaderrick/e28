@@ -15,7 +15,7 @@ const routes = [
   { path: '/recipes', component: RecipesPage, name: 'recipes' },
   { path: '/recipes/:id', component: RecipePage, name: 'recipe', props: true },
   { path: '/vault', component: VaultPage, name: 'vault' },
-  { path: '/recipes/edit/:id', component: EditRecipePage, name: 'editRecipe', props: true }
+  { path: '/recipes/edit/:propId', component: EditRecipePage, name: 'editRecipe', props: true }
 ];
 
 const router = new VueRouter({

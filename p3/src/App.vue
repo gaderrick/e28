@@ -6,7 +6,7 @@
       <router-link exact :to='{name: "home"}'>Home</router-link>&nbsp;&nbsp;
       <router-link exact :to='{name: "recipes"}'>Recipes</router-link>&nbsp;&nbsp;
       <router-link exact :to='{name: "vault"}'>Vault</router-link>&nbsp;|&nbsp;
-      <router-link exact :to='{name: "editRecipe", params: {id: 0 }}'>Add a Recipe</router-link>
+      <router-link exact :to='{name: "editRecipe", params: {propId: 0 }}'>Add a Recipe</router-link>
       <br />
       <br />
     </div>
