@@ -166,7 +166,8 @@ export default {
       localRecipe: null,
       recipe: null,
       recipeLoaded: false,
-      newRecipe: false
+      newRecipe: false,
+      maxLocalId: null
     };
   },
   mounted() {
@@ -234,7 +235,10 @@ export default {
 
       switch (action) {
         case 'save':
-          recipeList.add(this.recipe, recipeId, recipeList.maxIndex() + 1);
+          this.maxLocalId = recipeList.maxIndex() + 1;
+          recipeList.add(this.recipe, recipeId, this.maxLocalId);
+          this.id = this.maxLocalId;
+          this.newRecipe = false;
 
           // this.addAlert = true;
           // setTimeout(() => (this.addAlert = false), 2000);
