@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if='recipeLoaded'>
     <div class='recipeName'>
       <label>
         Recipe Name:
@@ -8,7 +8,6 @@
           type='text'
           id='recipeName'
           v-model='recipe.recipeName'
-          v-if='recipeLoaded'
         />
       </label>
       <br />
@@ -26,7 +25,6 @@
                   type='text'
                   id='origGravity'
                   v-model='recipe.origGravity'
-                  v-if='recipeLoaded'
                 />
               </label>
             </div>
@@ -38,39 +36,26 @@
                   type='text'
                   id='finalGravity'
                   v-model='recipe.finalGravity'
-                  v-if='recipeLoaded'
                 />
               </label>
             </div>
             <div class='divTableCell'>
               <label class='boldText'>
                 ABV:
-                <input
-                  class='inputBox'
-                  type='text'
-                  id='abv'
-                  v-model='recipe.abv'
-                  v-if='recipeLoaded'
-                />
+                <input class='inputBox' type='text' id='abv' v-model='recipe.abv' />
               </label>
             </div>
             <div class='divTableCell'>
               <label class='boldText'>
                 IBU:
-                <input
-                  class='inputBox'
-                  type='text'
-                  id='ibu'
-                  v-model='recipe.ibu'
-                  v-if='recipeLoaded'
-                />
+                <input class='inputBox' type='text' id='ibu' v-model='recipe.ibu' />
               </label>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class='container' v-if='recipeLoaded'>
+    <div class='container'>
       <div class='listText boldText'>Ingredients</div>
       <div class='listText' v-bind:key='index' v-for='(ingredient,index) in recipe.ingredients'>
         <input
@@ -89,7 +74,7 @@
         >Remove</button>
       </div>
     </div>
-    <div class='container' v-if='recipeLoaded'>
+    <div class='container'>
       <div class='listText boldText'>Hops</div>
       <div class='listText' v-bind:key='index' v-for='(hop,index) in recipe.hops'>
         <input class='dataInputBox' type='text' v-bind:id='"hop_"+index' v-model='hop.value' />&nbsp;
@@ -100,7 +85,7 @@
         >Remove</button>
       </div>
     </div>
-    <div class='container' v-if='recipeLoaded'>
+    <div class='container'>
       <div class='listText boldText'>Yeast</div>
       <div class='listText' v-bind:key='index' v-for='(yeast,index) in recipe.yeasts'>
         <input class='dataInputBox' type='text' v-bind:id='"yeast_"+index' v-model='yeast.value' />&nbsp;
@@ -111,7 +96,7 @@
         >Remove</button>
       </div>
     </div>
-    <div class='container' v-if='recipeLoaded'>
+    <div class='container'>
       <div class='listText boldText'>Other Ingredients</div>
       <div class='listText' v-bind:key='index' v-for='(other,index) in recipe.otherIngredients'>
         <input class='dataInputBox' type='text' v-bind:id='"other_"+index' v-model='other.value' />&nbsp;
@@ -125,7 +110,7 @@
         >Remove</button>
       </div>
     </div>
-    <div class='container' v-if='recipeLoaded'>
+    <div class='container'>
       <div
         class='listText boldText'
       >Directions (You may include HTML special characters like "&amp;#176;" in this field)</div>
@@ -173,6 +158,7 @@ export default {
   mounted() {
     this.id = this.propId;
     this.localRecipe = new app.Recipe().getDetails();
+    console.log(this.localRecipe);
     if (this.localRecipe[this.id] == null) {
       this.id = 0;
     }

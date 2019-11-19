@@ -25,7 +25,6 @@ export default class Recipe {
         ];
     }
 
-    /*** Getter method for items ***/
     getDetails() {
         return this.recipe;
     }
@@ -33,19 +32,27 @@ export default class Recipe {
     add(theRecipe, recipeId) { // , maxRecipeId
         // First see if product is already present
         let test = this.findRecipe(recipeId)
-        console.log("Recipe exists? " + test);
         if (test) {
             // Recipe is already stored; update it
             this.recipe[recipeId] = theRecipe;
-            console.log(this.recipe);
         } else {
             // Recipe is new; add it to the local storage variable
-
             this.recipe.push(theRecipe);
-            console.log(this.recipe);
         }
 
         this.update();
+    }
+
+    remove(recipeId) {
+        let item = this.findRecipe(recipeId);
+        console.log("Recipe: " + recipeId);
+        console.log("Recipe exists: " + item);
+        if (item) {
+            this.recipe.splice(recipeId, 1);
+            this.update();
+            console.log("Updated recipe list");
+            console.log(this.recipe);
+        }
     }
 
     /*** Updates cart in localstorage ***/
@@ -55,20 +62,12 @@ export default class Recipe {
 
     /*** Get a recipe if it exists ***/
     findRecipe(recipeId) {
-        console.log("In findRecipe..." + recipeId);
         let found = false;
         if (typeof this.recipe[recipeId] === 'undefined') {
-            console.log('Recipe not found');
             found = false;
         } else {
             found = true;
-            console.log('Recipe found');
         }
-        // for (let key of Object.keys(this)) {
-        //     if (this[key].id == recipeId) {
-        //         found = true;
-        //     }
-        // }
         return found;
     }
 }
