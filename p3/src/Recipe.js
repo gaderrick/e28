@@ -9,7 +9,9 @@ export default class Recipe {
             {
                 id: '',
                 recipeName: '',
+                image: '',
                 description: '',
+                credit: '',
                 origGravity: '',
                 finalGravity: '',
                 abv: '',
