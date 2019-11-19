@@ -45,13 +45,9 @@ export default class Recipe {
 
     remove(recipeId) {
         let item = this.findRecipe(recipeId);
-        console.log("Recipe: " + recipeId);
-        console.log("Recipe exists: " + item);
         if (item) {
             this.recipe.splice(recipeId, 1);
             this.update();
-            console.log("Updated recipe list");
-            console.log(this.recipe);
         }
     }
 

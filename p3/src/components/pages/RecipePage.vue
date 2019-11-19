@@ -66,7 +66,6 @@ export default {
   mounted() {
     app.axios.get(app.config.api + 'recipes/' + this.id).then(response => {
       this.recipe = response.data;
-      console.log(response.data);
       this.recipeLoaded = true;
     });
   }

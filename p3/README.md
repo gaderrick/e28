@@ -3,6 +3,11 @@
 + Production URL: <http://p3.gaderrick.me>
 
 ## Outline of features
++ The homepage shows a list of featured beer recipes that are clickable to see the recipe details
++ There is an all recipes page that shows all the recipes in the database (JSON server file for P3)
++ The user has the ability to add a new recipe to local storage; the form is dynamic and usable for adding and editing recipes
++ Submitting a new recipe or editing an exising one automatically redirects to a page showing all the local storage recipes
++ The user has the ability to remove a created recipe from local storage
 
 ## Outside resources
 + Beer Icons, https://www.vectorstock.com/royalty-free-vector/craft-beer-icon-vector-21137407

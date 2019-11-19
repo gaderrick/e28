@@ -158,7 +158,7 @@ export default {
   mounted() {
     this.id = this.propId;
     this.localRecipe = new app.Recipe().getDetails();
-    console.log(this.localRecipe);
+
     if (this.localRecipe[this.id] == null) {
       this.id = 0;
     }
@@ -222,12 +222,9 @@ export default {
           recipeList.add(this.recipe, -1);
           this.newRecipe = false;
 
-          // this.addAlert = true;
-          // setTimeout(() => (this.addAlert = false), 2000);
           break;
 
         case 'update':
-          console.log('Updating Recipe ID:' + recipeId);
           recipeList.add(this.recipe, recipeId);
           this.newRecipe = false;
           break;
