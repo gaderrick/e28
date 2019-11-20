@@ -18,4 +18,4 @@
 + How to wrap DIV html tags on screen, https://stackoverflow.com/questions/11517415/how-can-i-wrap-divs
 
 ## Notes for instructor
-+ 
++ I ran into the size issue with the JSON server with regard to the number of recipes I could store. I'm currently looking into several solutions for this going forward.
