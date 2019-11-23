@@ -7,7 +7,7 @@
   </div>
 </template>
 <script>
-import * as app from './../../app.js';
+//import * as app from './../../app.js';
 
 export default {
   name: 'CategoriesPage',
@@ -15,25 +15,35 @@ export default {
   data: function() {
     return {
       //products: null,
-      categories: null,
-      isLoading: false
+      //categories: null,
     };
   },
-  methods: {
-    loadCategories: function() {
+  computed: {
+    products: function() {
+      return this.$store.state.products;
+    },
+    categories: function() {
       let categories = this.products.map(product => product.categories);
       let mergedCategories = [].concat.apply([], categories);
 
-      // Return unique, sorted categories
-      this.categories = [...new Set(mergedCategories)].sort();
+      return [...new Set(mergedCategories)].sort();
     }
-  },
-  mounted() {
-    app.axios.get(app.config.api + 'products').then(response => {
-      this.products = response.data;
-      this.loadCategories();
-    });
   }
+  // methods: {
+  //   loadCategories: function() {
+  //     let categories = this.products.map(product => product.categories);
+  //     let mergedCategories = [].concat.apply([], categories);
+
+  //     // Return unique, sorted categories
+  //     this.categories = [...new Set(mergedCategories)].sort();
+  //   }
+  // },
+  // mounted() {
+  //   app.axios.get(app.config.api + 'products').then(response => {
+  //     this.products = response.data;
+  //     this.loadCategories();
+  //   });
+  // }
 };
 </script>
 
