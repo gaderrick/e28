@@ -7,6 +7,8 @@ import CategoriesPage from "./components/pages/CategoriesPage.vue";
 import ProductPage from "./components/pages/ProductPage.vue";
 import CartPage from "./components/pages/CartPage.vue";
 
+import store from './store/index.js'
+
 Vue.use(VueRouter);
 Vue.config.productionTip = false;
 
@@ -25,5 +27,6 @@ const router = new VueRouter({
 
 new Vue({
   router: router,
+  store: store, // Accessed with this.$store
   render: h => h(App),
 }).$mount('#app')
