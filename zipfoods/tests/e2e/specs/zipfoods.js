@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 describe('ZipFoods', () => {
   it('Visits the homepage', () => {
     cy.visit('/')
@@ -35,11 +34,4 @@ describe('ZipFoods', () => {
     cy.contains('[data-test="cart-count"]', 0);
     cy.contains('No items');
   })
-=======
-describe('Zipfoods', () => {
-    it('Visits the homepage', () => {
-        cy.visit('/')
-        cy.contains('h2', 'Featured Products')
-    })
->>>>>>> 02a4608d3341c71e22edf498766f258d571f0d56
 })

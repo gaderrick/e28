@@ -24,9 +24,10 @@ export default new Vuex.Store({
     actions: {
         setProducts(context) {
             app.axios
-                .get(app.config.api + "products")
+                //.get(app.config.api + "products")
+                .get(app.config.api)
                 .then(response => {
-                    context.commit('setProducts', response.data)
+                    context.commit('setProducts', response.data.splice(1))
                     //this.products = response.data;
                 });
         }

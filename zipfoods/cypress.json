@@ -1,9 +1,4 @@
 {
-<<<<<<< HEAD
-  "pluginsFile": "tests/e2e/plugins/index.js"
-}
-=======
   "pluginsFile": "tests/e2e/plugins/index.js",
   "chromeWebSecurity": false
 }
->>>>>>> 02a4608d3341c71e22edf498766f258d571f0d56
