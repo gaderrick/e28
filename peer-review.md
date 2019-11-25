@@ -1,8 +1,8 @@
 ## P3 Peer Review 
 
-+ Reviewer's name: 
-+ Reviwee's name: 
-+ URL to reviewee's Github repo: *<https://github.com/example/e28>*
++ Reviewer's name: Gerald Derrick (gaderrick)
++ Reviwee's name: Jeff Crone (luigi1015)
++ URL to reviewee's Github repo: *<https://github.com/luigi1015/e28>*
 
 *Answer the following questions in regards to the student's project you are reviewing. Include context and code examples in your answers when relevant.*
 
