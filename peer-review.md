@@ -8,8 +8,10 @@
 
 
 ### Are you able to produce any errors or unexpected results?
+I was unable to produce any errors on the production server deployment.
 
 ### Were there any parts of the interface that you found confusing or unclear?
+The recipe page and homepage appear to go to the same route with no distinction that they are different components.
 
 ### Are there aspects of the code that you feel were not self-evident and would benefit from comments?
 
