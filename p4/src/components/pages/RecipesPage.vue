@@ -2,6 +2,7 @@
   <div>
     <div v-for='recipe in sharedState.recipes' :key='recipe.id'>
       <router-link :to='{ name: "recipe", params: {"id": recipe.id}}'>{{ recipe.name }}</router-link>
+      <a href='#' @click='addToBrewList(recipe.id)'>Brew</a>
     </div>
   </div>
 </template>
@@ -11,6 +12,12 @@ import * as app from './../../app.js';
 export default {
   name: 'RecipesPage',
   components: {},
+  methods: {
+    addToBrewList: function(brewId) {
+      this.$store.commit('addToBrewList', brewId);
+      console.log(this.$store.state.toBrewList);
+    }
+  },
   data: function() {
     return {
       sharedState: app.site

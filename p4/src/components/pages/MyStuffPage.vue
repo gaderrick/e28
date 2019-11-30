@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if='loaded'>
     <div class='divWrap' v-for='(recipe, index) in localRecipes' :key='index'>
       <span v-if='index != ""'>
         <router-link :to='{name: "editRecipe", params: {propId: index }}'>{{ recipe.recipeName }}</router-link>
@@ -18,7 +18,8 @@ export default {
   components: {},
   data: function() {
     return {
-      localRecipes: null
+      localRecipes: null,
+      loaded: false
     };
   },
   methods: {
@@ -32,6 +33,7 @@ export default {
   },
   mounted() {
     this.localRecipes = new app.Recipe().getDetails();
+    this.loaded = true;
   }
 };
 </script>

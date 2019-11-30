@@ -5,7 +5,8 @@
       <br />
       <router-link exact :to='{name: "home"}'>Home</router-link>&nbsp;&nbsp;
       <router-link exact :to='{name: "recipes"}'>Recipe Catalog</router-link>&nbsp;&nbsp;
-      <router-link exact :to='{name: "myStuff"}'>My Recipes</router-link>&nbsp;|&nbsp;
+      <router-link exact :to='{name: "myStuff"}'>My Recipes</router-link>&nbsp;&nbsp;
+      <router-link exact :to='{name: "myToBrewList"}'>My To Brew List</router-link>|&nbsp;
       <router-link exact :to='{name: "editRecipe", params: {propId: 0 }}'>Add a Recipe</router-link>
       <br />
       <br />
@@ -25,10 +26,11 @@ export default {
     SiteHeader,
     SiteFooter
   },
+  mounted() {
+    console.log(this.$store);
+  },
   data: function() {
-    return {
-      //links: ['home', 'recipes', 'mystuff']
-    };
+    return {};
   }
 };
 </script>
