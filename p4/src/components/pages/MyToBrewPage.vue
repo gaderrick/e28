@@ -4,8 +4,7 @@
     <br />
     <br />
     <div v-for='(recipeId, index) in toBrewList' :key='index'>
-      <!--{{ sharedState.recipes[index].name }} |-->
-      {{ getRecipeName(recipeId) }} {{ index}}
+      {{ getRecipeName(recipeId) }}
       <a
         href='#'
         class='smallerText'
@@ -22,12 +21,6 @@ import * as app from './../../app.js';
 
 export default {
   name: 'MyToBrewPage',
-  components: {},
-  data: function() {
-    return {
-      sharedState: app.site
-    };
-  },
   methods: {
     removeFromBrewList: function(brewIndex) {
       this.$store.commit('removeFromBrewList', brewIndex);
@@ -46,11 +39,10 @@ export default {
   computed: {
     toBrewList: function() {
       return this.$store.state.toBrewList;
+    },
+    sharedState: function() {
+      return app.site;
     }
-  },
-  mounted() {
-    console.log('On To Brew Page');
-    console.log(this.$store.state.toBrewList);
   }
 };
 </script>
