@@ -1,13 +1,20 @@
 <template>
-  <div v-if='loaded'>
+  <div v-if='loaded && localRecipes.length > 1'>
+    You have the below personal recipes stored. Click "Edit" or "Remove" to make changes.
+    <br />
+    <br />
     <div class='divWrap' v-for='(recipe, index) in localRecipes' :key='index'>
       <span v-if='index != ""'>
-        <router-link :to='{name: "editRecipe", params: {propId: index }}'>{{ recipe.recipeName }}</router-link>
+        <router-link
+          data-test='edit-recipe'
+          :to='{name: "editRecipe", params: {propId: index }}'
+        >{{ recipe.recipeName }}</router-link>
         <br />
-        <a class='smallerText' v-on:click='deleteRecipe(index)'>remove</a>
+        <a data-test='remove-recipe' class='smallerText' v-on:click='deleteRecipe(index)'>remove</a>
       </span>
     </div>
   </div>
+  <div v-else>You do not have any personal recipes stored.</div>
 </template>
 
 <script>

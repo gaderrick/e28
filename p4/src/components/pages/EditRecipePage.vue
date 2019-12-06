@@ -65,10 +65,12 @@
           v-model='ingredient.value'
         />&nbsp;
         <button
+          data-test='add-ingredient'
           v-on:click='addListItem("ingredient")'
           v-if='index == recipe.ingredients.length-1'
         >Add</button>
         <button
+          data-test='remove-ingredient'
           v-on:click='removeListItem("ingredient", index)'
           v-if='index != recipe.ingredients.length-1'
         >Remove</button>
@@ -78,8 +80,13 @@
       <div class='listText boldText'>Hops</div>
       <div class='listText' v-bind:key='index' v-for='(hop,index) in recipe.hops'>
         <input class='dataInputBox' type='text' v-bind:id='"hop_"+index' v-model='hop.value' />&nbsp;
-        <button v-on:click='addListItem("hops")' v-if='index == recipe.hops.length-1'>Add</button>
         <button
+          data-test='add-hop'
+          v-on:click='addListItem("hops")'
+          v-if='index == recipe.hops.length-1'
+        >Add</button>
+        <button
+          data-test='remove-hop'
           v-on:click='removeListItem("hops", index)'
           v-if='index != recipe.hops.length-1'
         >Remove</button>
@@ -89,8 +96,13 @@
       <div class='listText boldText'>Yeast</div>
       <div class='listText' v-bind:key='index' v-for='(yeast,index) in recipe.yeasts'>
         <input class='dataInputBox' type='text' v-bind:id='"yeast_"+index' v-model='yeast.value' />&nbsp;
-        <button v-on:click='addListItem("yeast")' v-if='index == recipe.yeasts.length-1'>Add</button>
         <button
+          data-test='add-yeast'
+          v-on:click='addListItem("yeast")'
+          v-if='index == recipe.yeasts.length-1'
+        >Add</button>
+        <button
+          data-test='remove-yeast'
           v-on:click='removeListItem("yeast", index)'
           v-if='index != recipe.yeasts.length-1'
         >Remove</button>
@@ -101,10 +113,12 @@
       <div class='listText' v-bind:key='index' v-for='(other,index) in recipe.otherIngredients'>
         <input class='dataInputBox' type='text' v-bind:id='"other_"+index' v-model='other.value' />&nbsp;
         <button
+          data-test='add-other'
           v-on:click='addListItem("other")'
           v-if='index == recipe.otherIngredients.length-1'
         >Add</button>
         <button
+          data-test='remove-other'
           v-on:click='removeListItem("other", index)'
           v-if='index != recipe.otherIngredients.length-1'
         >Remove</button>
@@ -126,17 +140,23 @@
           v-model='direction.value'
         />&nbsp;
         <button
+          data-test='add-direction'
           v-on:click='addListItem("direction")'
           v-if='index == recipe.directions.length-1'
         >Add</button>
         <button
+          data-test='remove-direction'
           v-on:click='removeListItem("direction", index)'
           v-if='index != recipe.directions.length-1'
         >Remove</button>
       </div>
     </div>
-    <button v-if='newRecipe' v-on:click='saveRecipe("save", id)'>Save Recipe to Local Storage</button>
-    <button v-else v-on:click='saveRecipe("update", id)'>Update Recipe</button>
+    <button
+      data-test='button-save'
+      v-if='newRecipe'
+      v-on:click='saveRecipe("save", id)'
+    >Save Recipe to Local Storage</button>
+    <button v-else data-test='button-update' v-on:click='saveRecipe("update", id)'>Update Recipe</button>
   </div>
 </template>
 <script>

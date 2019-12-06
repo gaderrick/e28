@@ -1,7 +1,7 @@
 <template>
   <div>
     <span v-for='recipe in featuredRecipes' :key='recipe.id'>
-      <router-link :to='{ name: "recipe", params: {"id": recipe.id}}'>
+      <router-link data-test='featured-beer' :to='{ name: "recipe", params: {"id": recipe.id}}'>
         <img :src='require("./../assets/images/" + recipe.image)' />
         <br />
         {{ recipe.name }}

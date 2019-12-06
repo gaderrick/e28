@@ -1,8 +1,11 @@
 <template>
   <div>
     <div v-for='recipe in sharedState.recipes' :key='recipe.id'>
-      <router-link :to='{ name: "recipe", params: {"id": recipe.id}}'>{{ recipe.name }}</router-link>
-      <a href='#' @click='addToBrewList(recipe.id)'>Brew</a>
+      <router-link
+        data-test='recipe-name'
+        :to='{ name: "recipe", params: {"id": recipe.id}}'
+      >{{ recipe.name }}</router-link>
+      <a data-test='brew-beer' href='#' @click='addToBrewList(recipe.id)'>Brew</a>
     </div>
   </div>
 </template>

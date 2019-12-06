@@ -3,9 +3,10 @@
     The following recipes are currently in your "to brew" list. Click "Remove" to remove one from your list.
     <br />
     <br />
-    <div v-for='(recipeId, index) in toBrewList' :key='index'>
+    <div data-test='recipe-name' v-for='(recipeId, index) in toBrewList' :key='index'>
       {{ getRecipeName(recipeId) }}
       <a
+        data-test='remove-brew'
         href='#'
         class='smallerText'
         v-on:click='removeFromBrewList(index)'
