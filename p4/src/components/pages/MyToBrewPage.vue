@@ -25,7 +25,6 @@ export default {
   methods: {
     removeFromBrewList: function(brewIndex) {
       this.$store.commit('removeFromBrewList', brewIndex);
-      console.log(this.$store.state.toBrewList);
     },
     getRecipeName: function(recipeId) {
       let rName = null;

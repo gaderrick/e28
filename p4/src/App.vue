@@ -30,9 +30,7 @@ export default {
     SiteHeader,
     SiteFooter
   },
-  mounted() {
-    console.log(this.$store);
-  },
+  mounted() {},
   data: function() {
     return {};
   }

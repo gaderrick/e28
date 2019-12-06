@@ -10,7 +10,6 @@ export default new Vuex.Store({
     mutations: {
         addToBrewList(state, payload) {
             // code
-            console.log("I got to the addToBrewList mutation");
             state.toBrewList.push(payload);
         },
         removeFromBrewList(state, payload) {

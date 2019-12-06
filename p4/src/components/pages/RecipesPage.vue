@@ -18,7 +18,6 @@ export default {
   methods: {
     addToBrewList: function(brewId) {
       this.$store.commit('addToBrewList', brewId);
-      console.log(this.$store.state.toBrewList);
     }
   },
   data: function() {

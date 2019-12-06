@@ -23,6 +23,7 @@
 // -- This is will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
+// Added from: https://blog.liplex.de/keep-local-storage-in-cypress/
 let LOCAL_STORAGE_MEMORY = {};
 
 Cypress.Commands.add("saveLocalStorageCache", () => {
