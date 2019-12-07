@@ -6,7 +6,7 @@ describe('ZipFoods', () => {
 
   let product = {
     name: 'Driscoll’s Strawberries',
-    id: 1
+    slug: 'driscolls-strawberries'
   }
 
   it('shows all the products', () => {
@@ -25,7 +25,7 @@ describe('ZipFoods', () => {
   })
 
   it('interacts with cart', () => {
-    cy.visit('/product/' + product.id);
+    cy.visit('/product/' + product.slug);
     cy.get('[data-test="add-to-cart-button"]').click();
     cy.contains('[data-test="cart-count"]', 1);
     cy.visit('/cart');

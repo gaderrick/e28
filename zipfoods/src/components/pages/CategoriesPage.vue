@@ -23,7 +23,7 @@ export default {
       return this.$store.state.products;
     },
     categories: function() {
-      let categories = this.products.map(product => product.categories);
+      let categories = _.map(this.products, 'categories');
       let mergedCategories = [].concat.apply([], categories);
 
       return [...new Set(mergedCategories)].sort();

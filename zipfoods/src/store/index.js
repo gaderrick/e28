@@ -8,7 +8,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
     state: {
         cartCount: 0,
-        products: [],
+        products: null,
     },
     mutations: {
         setCartCount(state, payload) {
@@ -19,24 +19,24 @@ export default new Vuex.Store({
         },
         setProducts(state, payload) {
             state.products = payload;
+        },
+        addProduct(state, payload) {
+            _.merge(state.products, payload);
         }
     },
     actions: {
         setProducts(context) {
-            app.axios
-                //.get(app.config.api + "products")
-                .get(app.config.api)
-                .then(response => {
-                    context.commit('setProducts', response.data.splice(1))
-                    //this.products = response.data;
-                });
+            app.axios.get(app.config.api + 'products.json').then(response => {
+                // https://stackoverflow.com/questions/39156533/firebase-database-returns-null-at-beginning-of-each-new-node
+                context.commit('setProducts', response.data)
+            });
         }
     },
     getters: {
-        getProductById(state) {
-            return function (id) {
-                // javascript array filtering
-                return state.products.find(product => product.id == id);
+        getProductBySlug(state) {
+            return function (slug) {
+                //return state.products.find(product => product.id == id);
+                return _.find(state.products, { 'slug': slug });
             }
         }
     }

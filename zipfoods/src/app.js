@@ -4,7 +4,7 @@ export const axios = require('axios');
 
 export const config = {
     //api: 'https://my-json-server.typicode.com/susanBuck/e28/',
-    api: 'https://e28-zipfoods-e7684.firebaseio.com/products.json'
+    api: 'https://e28-zipfoods-e7684.firebaseio.com/'
 }
 
 export let store = {
