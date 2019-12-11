@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import Vuelidate from 'vuelidate';
 import App from './App.vue'
 import VueRouter from 'vue-router';
 import HomePage from './components/pages/HomePage.vue';
@@ -10,6 +11,7 @@ import EditRecipePage from './components/pages/EditRecipePage.vue';
 
 import store from './store'
 
+Vue.use(Vuelidate)
 Vue.use(VueRouter);
 Vue.config.productionTip = false;
 

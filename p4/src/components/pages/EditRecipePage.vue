@@ -1,55 +1,95 @@
 <template>
   <div v-if='recipeLoaded'>
     <div class='recipeName'>
-      <label>
-        Recipe Name:
-        <input
-          class='recipeNameInput'
-          type='text'
-          id='recipeName'
-          v-model='recipe.recipeName'
-        />
-      </label>
-      <br />
-      <br />
+      <label>Recipe Name:</label>
+      <input
+        class='recipeNameInput'
+        :class='{ "form-input-error": $v.recipe.recipeName.$error }'
+        type='text'
+        id='recipeName'
+        v-model='$v.recipe.recipeName.$model'
+      />
+      <div v-if='$v.recipe.recipeName.$error'>
+        <div
+          class='form-feedback-error'
+          v-if='!$v.recipe.recipeName.required'
+        >Recipe name is required</div>
+        <div
+          class='form-feedback-error'
+          v-if='!$v.recipe.recipeName.minLength'
+        >Recipe name must be at least 4 characters long.</div>
+        <small class='form-help'>Min: 4</small>
+      </div>
     </div>
+    <br />
+    <br />
     <div class='containter'>
       <div class='divTable'>
         <div class='divTableBody'>
           <div class='divTableRow'>
             <div class='divTableCell'>
-              <label class='boldText'>
-                Original Gravity:
-                <input
-                  class='inputBox'
-                  type='text'
-                  id='origGravity'
-                  v-model='recipe.origGravity'
-                />
-              </label>
+              <label class='boldText'>Original Gravity:</label>
+              <input
+                class='inputBox'
+                :class='{ "form-input-error": $v.recipe.origGravity.$error }'
+                type='text'
+                id='origGravity'
+                v-model='$v.recipe.origGravity.$model'
+              />
+              <div v-if='$v.recipe.origGravity.$error'>
+                <div
+                  class='form-feedback-error'
+                  v-if='!$v.recipe.origGravity.decimal'
+                >Please enter a decimal</div>
+              </div>
             </div>
             <div class='divTableCell'>
-              <label class='boldText'>
-                Final Gravity:
-                <input
-                  class='inputBox'
-                  type='text'
-                  id='finalGravity'
-                  v-model='recipe.finalGravity'
-                />
-              </label>
+              <label class='boldText'>Final Gravity:</label>
+              <input
+                class='inputBox'
+                :class='{ "form-input-error": $v.recipe.finalGravity.$error }'
+                type='text'
+                id='finalGravity'
+                v-model='$v.recipe.finalGravity.$model'
+              />
+              <div v-if='$v.recipe.finalGravity.$error'>
+                <div
+                  class='form-feedback-error'
+                  v-if='!$v.recipe.finalGravity.decimal'
+                >Please enter a decimal</div>
+              </div>
             </div>
             <div class='divTableCell'>
-              <label class='boldText'>
-                ABV:
-                <input class='inputBox' type='text' id='abv' v-model='recipe.abv' />
-              </label>
+              <label class='boldText'>ABV:</label>
+              <input
+                class='inputBox'
+                :class='{ "form-input-error": $v.recipe.abv.$error }'
+                type='text'
+                id='abv'
+                v-model='$v.recipe.abv.$model'
+              />
+              <div v-if='$v.recipe.abv.$error'>
+                <div
+                  class='form-feedback-error'
+                  v-if='!$v.recipe.abv.decimal'
+                >Please enter a decimal</div>
+              </div>
             </div>
             <div class='divTableCell'>
-              <label class='boldText'>
-                IBU:
-                <input class='inputBox' type='text' id='ibu' v-model='recipe.ibu' />
-              </label>
+              <label class='boldText'>IBU:</label>
+              <input
+                class='inputBox'
+                :class='{ "form-input-error": $v.recipe.ibu.$error }'
+                type='text'
+                id='ibu'
+                v-model='$v.recipe.ibu.$model'
+              />
+              <div v-if='$v.recipe.ibu.$error'>
+                <div
+                  class='form-feedback-error'
+                  v-if='!$v.recipe.ibu.integer'
+                >Please enter a integer</div>
+              </div>
             </div>
           </div>
         </div>
@@ -157,10 +197,17 @@
       v-on:click='saveRecipe("save", id)'
     >Save Recipe to Local Storage</button>
     <button v-else data-test='button-update' v-on:click='saveRecipe("update", id)'>Update Recipe</button>
+    <div class='form-feedback-error' v-if='formHasErrors'>Please correct the above errors</div>
   </div>
 </template>
 <script>
 import * as app from './../../app.js';
+import {
+  required,
+  minLength,
+  decimal,
+  integer
+} from 'vuelidate/lib/validators';
 
 export default {
   name: 'EditRecipePage',
@@ -191,6 +238,31 @@ export default {
     this.recipeLoaded = true;
   },
   components: {},
+  validations: {
+    recipe: {
+      recipeName: {
+        required,
+        minLength: minLength(4)
+      },
+      origGravity: {
+        decimal
+      },
+      finalGravity: {
+        decimal
+      },
+      abv: {
+        decimal
+      },
+      ibu: {
+        integer
+      }
+    }
+  },
+  watch: {
+    '$v.$anyError': function() {
+      this.formHasErrors = this.$v.$anyError;
+    }
+  },
   methods: {
     addListItem: function(listType) {
       switch (listType) {
@@ -235,23 +307,24 @@ export default {
       }
     },
     saveRecipe: function(action, recipeId) {
-      let recipeList = new app.Recipe();
+      if (!this.formHasErrors) {
+        let recipeList = new app.Recipe();
 
-      switch (action) {
-        case 'save':
-          recipeList.add(this.recipe, -1);
-          this.newRecipe = false;
+        switch (action) {
+          case 'save':
+            recipeList.add(this.recipe, -1);
+            this.newRecipe = false;
+            break;
 
-          break;
-
-        case 'update':
-          recipeList.add(this.recipe, recipeId);
-          this.newRecipe = false;
-          break;
-        default:
-          break;
+          case 'update':
+            recipeList.add(this.recipe, recipeId);
+            this.newRecipe = false;
+            break;
+          default:
+            break;
+        }
+        this.$router.push({ name: 'myStuff' });
       }
-      this.$router.push({ name: 'myStuff' });
     },
     decodeHtml: function(html) {
       var txt = document.createElement('textarea');
