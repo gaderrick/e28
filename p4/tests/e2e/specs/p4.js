@@ -34,7 +34,7 @@ describe('P4', () => {
         "name": "Jerry's Double IPA",
         "og": "1.010",
         "fg": "1.020",
-        "abv": "4.9%",
+        "abv": "4.9",
         "ibu": 100,
         "ingredients": [
             "3.3 lbs Briess Golden Light LME",

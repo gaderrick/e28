@@ -4,10 +4,9 @@ export default class Recipe {
         // Extract JSON recipe string from local storage
         let localRecipe = localStorage.getItem('recipe');
 
-        // Parse JSON recipe String to `recipe` object
+        // Parse JSON recipe String to `recipe` object; remove "id: ''" from below per peer review
         this.recipe = (localRecipe) ? JSON.parse(localRecipe) : [
             {
-                id: '',
                 recipeName: '',
                 image: '',
                 description: '',

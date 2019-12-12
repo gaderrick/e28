@@ -2,18 +2,17 @@
 + By: Gerald Derrick
 + Production URL: <http://p4.gaderrick.me>
 
-## Outline of features
-+ The homepage shows a list of featured beer recipes that are clickable to see the recipe details
-+ There is an all recipes page that shows all the recipes in the database (JSON server file for P3)
-+ The user has the ability to add a new recipe to local storage; the form is dynamic and usable for adding and editing recipes
-+ Submitting a new recipe or editing an exising one automatically redirects to a page showing all the local storage recipes
-+ The user has the ability to remove a created recipe from local storage
-## New for P4
-+ Added unit and E2E testing hooks
+## Improvements based on P3 peer review feedback
++ Fixed issue where a recipe could be submitted without a name.
++ Removed a dangling variable from the recipe class
++ Removed all console.log outputs from the code
 
 ## Outside resources (New for P4)
 + Keep local storage in Cypress, https://blog.liplex.de/keep-local-storage-in-cypress/
 + How to check the value of a form element, https://learntdd.in/vue/
++ Dynamic Inputs Not Validating, https://github.com/vuelidate/vuelidate/issues/356
 
 ## Notes for instructor
 + Added custom Cypress functions to allow me to persist localStorage variable between new baseUrl navigations
++ Figured out a neat way to dynamically allocate form input fields and still have Vue be able to control them (ie for validation)
++ Added an additional component/page and underlying code to support a user brew list

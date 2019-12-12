@@ -307,7 +307,8 @@ export default {
       }
     },
     saveRecipe: function(action, recipeId) {
-      if (!this.formHasErrors) {
+      this.$v.$touch();
+      if (!this.formHasErrors && this.recipe.recipeName != '') {
         let recipeList = new app.Recipe();
 
         switch (action) {
