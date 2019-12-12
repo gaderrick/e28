@@ -27,7 +27,6 @@ export default {
   components: {},
   data: function() {
     return {
-      //product: null,
       addAlert: false
     };
   },

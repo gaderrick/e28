@@ -7,6 +7,9 @@
       >{{ recipe.name }}</router-link>
       <a data-test='brew-beer' href='#' @click='addToBrewList(recipe.id)'>Brew</a>
     </div>
+    <transition name='fade'>
+      <div class='alert' v-if='addAlert'>Recipe added to your brew list</div>
+    </transition>
   </div>
 </template>
 <script>
@@ -18,11 +21,15 @@ export default {
   methods: {
     addToBrewList: function(brewId) {
       this.$store.commit('addToBrewList', brewId);
+
+      this.addAlert = true;
+      setTimeout(() => (this.addAlert = false), 2000);
     }
   },
   data: function() {
     return {
-      sharedState: app.site
+      sharedState: app.site,
+      addAlert: false
     };
   }
 };
