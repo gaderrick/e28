@@ -1,0 +1,172 @@
+{
+    "recipes": [
+        {
+            "id": 1,
+            "name": "Cream Ale",
+            "image": "cream-ale.jpg",
+            "description": "A yummy Cream Ale that's easy to drink",
+            "credit": "Briess",
+            "og": "1.049",
+            "fg": "1.010",
+            "abv": "5%",
+            "ibu": 20,
+            "ingredients": [
+                "3.3 lbs Briess Golden Light LME",
+                "2.5 lbs American 6-Row",
+                "1.5 lbs Flaked Maize",
+                ".75 lbs Corn Sugar"
+            ],
+            "hops": [
+                "2 oz Fuggles hop pellets"
+            ],
+            "yeast": [
+                "White Labs Australian Ale",
+                "White Labs German Ale/Kolsch",
+                "Nottingham Dry Ale Yeast"
+            ],
+            "other": [
+                "3/4 cup Priming Sugar"
+            ],
+            "directions": [
+                "1. Steep grains in bag in 2.5 gal of water at 155&#176;F for 30 minutes",
+                "2. Remove grains and bring to boil",
+                "3. Remove kettle from heat and add extract, sugar and hops",
+                "4. Boil for 60 minutes",
+                "5. Combine wort with water to make 5 gallons.",
+                "6. Pitch yeast when wort temperature is between 70-75&#176;F. Make sure to oxygenate.",
+                "7. If using one-step fermentation, allow to sit in the ferementer at 65-70&#176;F for about 7 days, then use a sanitized hydrometer to ensure that the beer has reached its final gravity. If using two-step fermentation, rack to a secondary ferementer (glass carboy) after 5 days and allow it to sit for another 10-14 days before bottling.",
+                "8. Prime and bottle. When priming, dissolve corn sugar or dry malt extract in two pints of boiling water for 15 minutes. Pour the mixture into the empty bottling bucket and siphon the beer from the fermenter over it. This method ensures that the priming sugar will disperse evenly through your beer.",
+                "9. For proper carbonation, store your beer at 70&#176;F for at least the first week after bottling. This will allow the yeast to feed on the priming sugar and produce the necessary carbon dioxide needed for carbonation. It's ready to drink, but it will improve if you age your beer another two to three weeks."
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Left Hand Milk Stout",
+            "image": "",
+            "description": "A yummy Milk Stout that's great with cookies",
+            "credit": "American Homebrewers Association",
+            "og": "1.068",
+            "fg": "1.016",
+            "abv": "7%",
+            "ibu": 19,
+            "ingredients": [
+                "3.85 lb Light Malt Extract",
+                "2.00 lb Pale Malt",
+                "0.75 lb Crystal 60L",
+                "0.75 lb Munich Malt",
+                "0.75 lb Chocolate Malt",
+                "0.50 lb Flaked Barley",
+                "0.50 lb Flaked Oats"
+            ],
+            "hops": [
+                "0.30 oz Magnum hop pellets (60 min)",
+                "1.00 oz Kent Golding hop pellets (10 min)"
+            ],
+            "yeast": [
+                "White Labs 001 California Ale Yeast"
+            ],
+            "other": [
+                "1.00 lb Lactose (15 minutes before end of boil",
+                "3/4 cup Priming Sugar",
+                "Irish Moss (optional)"
+            ],
+            "directions": [
+                "1. Mash grains with flaked barley and oats in steeping bag at 151&#176;F in 2 gallons of water for 90 minutes.",
+                "2. Rinse grain with 170&#176;F sparge water (about 1 gallon)",
+                "3. Boil will be 90 minutes long. Add hops according to times listed.",
+                "4. Add lactose during the last 15 minutes of the boil along with Irish Moss if desired.",
+                "5. After boil, cool your wort to 70&#176;F or slightly below. Add top off water to make 5 gallons.",
+                "6. Ferment at 70&#176;F for about a week.",
+                "7. Transfer to secondary with the final gravity has been reached and condition at 60&#176;F for at least one week.",
+                "8. Prime and bottle. Store for 2 weeks at 68-72&#176;F then sample."
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Better than Perfect Double IPA",
+            "image": "ipa.jpg",
+            "description": "",
+            "credit": "Briess Malting",
+            "og": "1.081",
+            "fg": "1.016",
+            "abv": "8.6%",
+            "ibu": 119,
+            "ingredients": [
+                "11 lb Briess CBW&#174; Pale Ale liquid malt extract",
+                "1.5 lb Briess Caramel 20L Malt"
+            ],
+            "hops": [
+                "5 oz Galaxy Hops 13% Alpha Acid",
+                "6 oz Citra&trade; Hops 12% Alpha Acid"
+            ],
+            "yeast": [
+                "2x White Labs WLP001 California Ale"
+            ],
+            "other": [
+                "3/4 cup Priming Sugar"
+            ],
+            "directions": [
+                "1. Steep Caramel Malt 20L at 154&#176;F for 20 minutes in 3 gallons of water.",
+                "2. Remove grains and bring water up to boil. (Total boil time is 60 minutes)",
+                "3. Add 5.5 lb of CBW&#174 Pale Ale liquid malt extract.",
+                "4. Add 1 oz Galaxy Hops once a boil is reached.",
+                "5. After 30 minutes, add 2 oz of Galaxy hops and 2 oz of Citra&trade; hops.",
+                "6. Boil 20 more minutes and again add 2 oz of Galaxy hops and 2 oz of Citra&trade; hops.",
+                "7. Boil 10 more minutes and turn off heat.",
+                "8. Stir in 2 oz of Citra&trade; hops and 5.5 lb of CBW&#174 Pale Ale liquid malt extract.",
+                "9. Chill the wort to 65&#176;F and aerate thoroughly.",
+                "10. Pitch 2 packages of yeast. Ferment in primary at 65-70&#176;F for two weeks.",
+                "11. Move to a secondary fermenter and age an additional two weeks."
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Spiced Ale",
+            "image": "",
+            "description": "A festive holiday brew",
+            "credit": "",
+            "og": "1.059",
+            "fg": "1.010",
+            "abv": "6.46%",
+            "ibu": 0,
+            "ingredients": [
+                "3.3 lb light unhopped malt extract",
+                "2 lbs light dried malt extract",
+                "1 lb Honey",
+                ".5 lb crystal 20 malt",
+                ".5 lb Wheat malt",
+                ".5 lb Carapils",
+                "1 six inch stick of cinnamon",
+                "1 medium whole orange",
+                "6 whole cloves"
+            ],
+            "hops": [
+                "2 oz Cascade hop pellets",
+                "1 oz Sazz hop pellets"
+            ],
+            "yeast": [
+                "White Labs California Yeast, or",
+                "Nottingham dry yeast"
+            ],
+            "other": [
+                "3/4 cup Priming Sugar, or",
+                "1 1/4 cups dry malt extract"
+            ],
+            "directions": [
+                "1. Steep grains in hop bagin 1.5 gallons of water at 155&#176;F for 30 minutes.",
+                "2. Remove grains and bring to boil.",
+                "3. Remove from heat and add malt extract and stir until completely dissolved.",
+                "4. Return to boil and add 2 oz of Cascade hops. Boil for 45 minutes.",
+                "5. Add cinnamon stick (in hop bag) and honey and continue to boil for 10 minutes.",
+                "6. Add Saaz hops during the last 2 minutes of boil.",
+                "7. Prepare your orange and cloves by squashing the unpeeled orange until it is soft inside. Poke the peel with a sharp fork to put several holes through the peel. Take 6 cloves and insert into some of the holes.",
+                "8. Turn off the heat and toss your prepared orange into the wort. Let it steep for 15-20 minutes. Remove orange and cinnamon.",
+                "9. Combine wort with water to make five gallons. There is no need to strain.",
+                "10. Pitch yeast when wort temperature is between 70-75&#176;F.",
+                "11. If using one step fermentation, allow it to sit in the fermenter at 68-72&#176;F for about seven days then use a sanitized hydrometer to ensure that the beer has reached its final gravity. If using two step fermentation, rack to a secondary fermenter (carboy). After five days and allow it to sit for another 10-14 days before bottling.",
+                "12. Prime and bottle. When priming, dissolve corn sugar or dry malt extract in two pints of boiling water for 5 minutes. Pouir this mixture into the empty bottling bucket and siphon the beer from the fermenter over it. This method ensures that the priming sugar will disperse evenly through the beer.",
+                "13. For proper carbonation, store your beer at 70&#176;F for at least the first week after bottling. This will allow the yeast to feed on the priming sugar and produce the necessary carbon dioxide needed for carbonation. Its ready to drink, but it will improve if you age the beer another 2-3 weeks."
+            ]
+        }
+    ]
+}
