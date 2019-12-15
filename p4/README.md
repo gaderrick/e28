@@ -16,3 +16,4 @@
 + Added custom Cypress functions to allow me to persist localStorage variable between new baseUrl navigations
 + Figured out a neat way to dynamically allocate form input fields and still have Vue be able to control them (ie for validation)
 + Added an additional component/page and underlying code to support a user brew list
++ Added firebase support for reading the recipes from firebase, but I noticed an issue I'd run into when adding recipes back in. I plan to continue developing this as a hobby site, and will be reworking it to that end.
