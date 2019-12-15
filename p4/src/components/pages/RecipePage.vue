@@ -64,10 +64,13 @@ export default {
     };
   },
   mounted() {
-    app.axios.get(app.config.api + 'recipes/' + this.id).then(response => {
-      this.recipe = response.data;
-      this.recipeLoaded = true;
-    });
+    let tempId = this.id - 1;
+    app.axios
+      .get(app.config.api + 'recipes/' + tempId + '.json')
+      .then(response => {
+        this.recipe = response.data;
+        this.recipeLoaded = true;
+      });
   }
 };
 </script>

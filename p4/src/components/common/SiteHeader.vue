@@ -15,7 +15,12 @@ export default {
     };
   },
   mounted() {
-    app.axios.get(app.config.api + 'recipes').then(response => {
+    // app.axios.get(app.config.api + 'recipes').then(response => {
+    //   app.site.recipes = response.data;
+    // });
+
+    // For firebase
+    app.axios.get(app.config.api + 'recipes.json').then(response => {
       app.site.recipes = response.data;
     });
   }
