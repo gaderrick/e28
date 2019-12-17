@@ -1,6 +1,6 @@
 # Project 4 - Beer Recipes
 + By: Gerald Derrick
-+ Production URL: <http://p4.gaderrick.me>
++ Production URL: <https://p4.gaderrick.me>
 
 ## Improvements based on P3 peer review feedback
 + Fixed issue where a recipe could be submitted without a name.
@@ -17,3 +17,11 @@
 + Figured out a neat way to dynamically allocate form input fields and still have Vue be able to control them (ie for validation)
 + Added an additional component/page and underlying code to support a user brew list
 + Added firebase support for reading the recipes from firebase, but I noticed an issue I'd run into when adding recipes back in. I plan to continue developing this as a hobby site, and will be reworking it to that end.
+
+## From the project rubric
++ Includes state management w/ Vuex
++ At least one data entity is managed via a Vuex store
++ Includes a passing unit test
++ Includes E2E testing for all features (passes)
++ Includes form validation using Vuelidate; to include a dynamic form validation
++ Deployed on Netlify with a custom domain of https://p4.gaderrick.me
